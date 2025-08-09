@@ -1,120 +1,177 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HemoRoom – הדמיות לרהיטים</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-        }
-        .section {
-            margin-bottom: 30px;
-        }
-        .section-title {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        .packages {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .package {
-            flex: 1;
-            min-width: 200px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            background-color: #fafafa;
-        }
-        .package h3 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-        .contact {
-            text-align: center;
-        }
-        .contact a {
-            display: inline-block;
-            margin: 5px;
-            padding: 10px 20px;
-            background-color: #27ae60;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HemoRoom – הדמיות לרהיטים</title>
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+}
+.section {
+    margin-bottom: 30px;
+}
+.section-title {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+.packages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.package {
+    flex: 1;
+    min-width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fafafa;
+}
+.package h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+.contact {
+    text-align: center;
+}
+.contact a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+/* Gallery styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.gallery-item {
+    flex: 1 1 250px;
+    max-width: 300px;
+    text-align: center;
+}
+.before-after {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+.before-after img {
+    width: 50%;
+    border-radius: 8px;
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>HemoRoom</h1>
-        <p>הדמיות AI לרהיטים – מוכנות לאתר ולרשתות</p>
-    </header>
-    <div class="container">
-        <section class="section">
-            <h2 class="section-title">עלינו</h2>
-            <p>אנו ב‑HemoRoom מתמחים בהדמיות AI איכותיות לריהוט, עם רקעים ועיצובים מותאמים אישית. אין צורך בצילומים יקרים – שלחו לנו את תמונות המוצרים שלכם ואנחנו נחזור אליכם עם הדמיות מרהיבות, מוכנות לאתר ולרשתות החברתיות.</p>
-        </section>
-        <section class="section">
-            <h2 class="section-title">חבילות</h2>
-            <div class="packages">
-                <div class="package">
-                    <h3>Basic</h3>
-                    <p>50 הדמיות מותאמות אישית</p>
-                    <p>תמונות לפני/אחרי בפורמט מותאם לאתר</p>
-                    <p>מגוון סגנונות</p>
-                    <p><strong>לפרטים נוספים – צרו קשר</strong></p>
-                </div>
-                <div class="package">
-                    <h3>Pro</h3>
-                    <p>100 הדמיות מותאמות אישית</p>
-                    <p>כתיבת תוכן קצר לכל תמונה</p>
-                    <p>התאמה לרשתות החברתיות</p>
-                    <p><strong>לפרטים נוספים – צרו קשר</strong></p>
-                </div>
-                <div class="package">
-                    <h3>Premium</h3>
-                    <p>200+ הדמיות מותאמות אישית</p>
-                    <p>עיצוב גרפי מתקדם</p>
-                    <p>יצירת תכנים שיווקיים מלאים</p>
-                    <p><strong>לפרטים נוספים – צרו קשר</strong></p>
-                </div>
+<header>
+    <h1>HemoRoom</h1>
+    <p>הדמיות AI לרהיטים – מוכנות לאתר ולרשתות</p>
+</header>
+<div class="container">
+    <section class="section">
+        <h2 class="section-title">עלינו</h2>
+        <p>אנו ב‑HemoRoom מתמחים בהדמיות AI איכותיות לריהוט, עם רקעים ועיצובים מותאמים אישית. אין צורך בצילומים יקרים – שלחו לנו את תמונות המוצרים שלכם ואנחנו נחזור אליכם עם הדמיות מרהיבות, מוכנות לאתר ולרשתות החברתיות.</p>
+    </section>
+    <section class="section">
+        <h2 class="section-title">חבילות</h2>
+        <div class="packages">
+            <div class="package">
+                <h3>Basic</h3>
+                <p>50 הדמיות מותאמות אישית</p>
+                <p>תמונות לפני/אחרי בפורמט מותאם לאתר</p>
+                <p>מגוון סגנונות</p>
+                <p><strong>לפרטים נוספים – צרו קשר</strong></p>
             </div>
-        </section>
-        <section class="section">
-            <h2 class="section-title">כיצד זה עובד?</h2>
-            <p>שלחו לנו את תמונות הרהיטים שלכם דרך Drive, WhatsApp או מייל. ציינו את סגנון העיצוב המועדף עליכם ואנחנו נייצר הדמיות בהתאם. לאחר מכן נחזיר לכם את התמונות המשודרגות – מוכנות לשימוש באתר, ברשתות ובקטלוגים.</p>
-        </section>
-        <section class="section contact">
-            <h2 class="section-title">צור קשר</h2>
-            <p>לפרטים והזמנות:</p>
-            <a href="https://wa.me/972543091711">הודעה ב‑WhatsApp</a>
-            <a href="mailto:info@hemoroom.com">שליחת מייל</a>
-        </section>
-    </div>
+            <div class="package">
+                <h3>Pro</h3>
+                <p>100 הדמיות מותאמות אישית</p>
+                <p>כתיבת תוכן קצר לכל תמונה</p>
+                <p>התאמה לרשתות החברתיות</p>
+                <p><strong>לפרטים נוספים – צרו קשר</strong></p>
+            </div>
+            <div class="package">
+                <h3>Premium</h3>
+                <p>200+ הדמיות מותאמות אישית</p>
+                <p>עיצוב גרפי מתקדם</p>
+                <p>יצירת תכנים שיווקיים מלאים</p>
+                <p><strong>לפרטים נוספים – צרו קשר</strong></p>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery section for before and after images -->
+    <section class="section">
+        <h2 class="section-title">לפני ואחרי</h2>
+        <p>גלריה של תמונות לפני ואחרי הממחישות את ההבדל שהדמיות שלנו יכולות ליצור.</p>
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="before-after">
+                    <img src="cabinet_before.jpg" alt="לפני - מזנון">
+                    <img src="cabinet_after.jpg" alt="אחרי - מזנון">
+                </div>
+                <p>מזנון</p>
+            </div>
+            <div class="gallery-item">
+                <div class="before-after">
+                    <img src="bed_before.jpg" alt="לפני - חדר שינה">
+                    <img src="bed_after.png" alt="אחרי - חדר שינה">
+                </div>
+                <p>חדר שינה</p>
+            </div>
+            <div class="gallery-item">
+                <div class="before-after">
+                    <img src="closet_before.jpg" alt="לפני - ארון פתיחה">
+                    <img src="closet_after.png" alt="אחרי - ארון פתיחה">
+                </div>
+                <p>ארון פתיחה</p>
+            </div>
+            <div class="gallery-item">
+                <div class="before-after">
+                    <img src="sofa_before.jpg" alt="לפני - ספה">
+                    <img src="sofa_after.jpg" alt="אחרי - ספה">
+                </div>
+                <p>ספה</p>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <h2 class="section-title">כיצד זה עובד?</h2>
+        <p>שלחו לנו את תמונות הרהיטים שלכם דרך Drive, WhatsApp או מייל. ציינו את סגנון העיצוב המועדף עליכם ואנחנו נייצר הדמיות בהתאם. לאחר מכן נחזיר לכם את התמונות המשודרגות – מוכנות לשימוש באתר, ברשתות ובקטלוגים.</p>
+    </section>
+    <section class="section contact">
+        <h2 class="section-title">צור קשר</h2>
+        <p>לפרטים והזמנות:</p>
+        <a href="https://wa.me/972543091711">הודעה ב‑WhatsApp</a>
+        <a href="mailto:info@hemoroom.com">שליחת מייל</a>
+    </section>
+</div>
 </body>
 </html>
