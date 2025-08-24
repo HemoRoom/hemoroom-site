@@ -10,134 +10,267 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f5f5f5;
+    background-color: #f9f9fb;
     color: #333;
 }
 header {
     background-color: #2c3e50;
-    color: white;
-    padding: 20px;
+    color: #fff;
+    padding: 40px 20px;
     text-align: center;
 }
-h1 {
+header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 3em;
+}
+header p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    opacity: 0.9;
 }
 .container {
-    width: 90%;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 .section {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 .section-title {
-    font-size: 1.8em;
-    margin-bottom: 10px;
+    font-size: 2em;
+    margin-bottom: 20px;
     color: #2c3e50;
     text-align: center;
+}
+.section p {
+    font-size: 1.1em;
+    line-height: 1.6;
 }
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
 }
 .gallery-item {
-    flex: 1 1 250px;
-    max-width: 300px;
+    flex: 1 1 300px;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 10px;
     text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.gallery-item:hover {
+    transform: translateY(-4px);
 }
 .before-after {
     display: flex;
-    flex-direction: row;
-    gap: 10px;
-    justify-content: center;
+    gap: 5px;
 }
 .before-after img {
     width: 50%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+.catalog {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+.catalog-item {
+    flex: 0 0 320px;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.catalog-item:hover {
+    transform: translateY(-4px);
+}
+.catalog .before-after img {
+    width: 50%;
+    height: auto;
+    border-radius: 6px;
 }
 .contact {
     text-align: center;
 }
 .contact a {
     display: inline-block;
-    margin: 5px;
-    padding: 10px 20px;
+    margin: 10px 5px;
+    padding: 12px 20px;
     background-color: #27ae60;
-    color: white;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    font-size: 1.1em;
     transition: background-color 0.3s;
 }
 .contact a:hover {
     background-color: #1e874c;
 }
+/* Lightbox overlay */
+#lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.lightbox-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+}
+.lightbox-title {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+.lightbox-images {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.lightbox-images img {
+    max-width: 45%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.lightbox-close {
+    margin-top: 15px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+.lightbox-close:hover {
+    background-color: #c0392b;
+}
 </style>
 </head>
 <body>
 <header>
-    <h1>HemoRoom</h1>
-    <p>הדמיות AI לרהיטים – מוכנות לאתר ולרשתות החברתיות</p>
+  <h1>HemoRoom</h1>
+  <p>הדמיות AI לרהיטים – מוכנות לאתר, לקטלוג ולרשתות החברתיות</p>
 </header>
 <div class="container">
-    <section class="section">
-        <h2 class="section-title">עלינו</h2>
-        <p>אנו ב‑<strong>HemoRoom</strong> מתמחים בהדמיות AI איכותיות לריהוט. איננו מסתפקים בתמונה פשוטה; אנו מנגישים אותה לחוויית עיצוב יוקרתית המתאימה לקטלוגים, לאתר ולרשתות החברתיות.</p>
-    </section>
-    <section class="section">
-        <h2 class="section-title">שירותי הדמיה</h2>
-        <p>אין אצלנו חבילות קבועות – כל פרויקט מותאם אישית. לקבלת הצעת מחיר, שלחו לנו פרטים על הפרויקט: כמה תמונות תרצו שנדמה, ומהו סגנון העיצוב המועדף עליכם (או כתבו שהכול פתוח לרעיונות). לאחר שנקבל את הפרטים ניצור אתכם קשר עם הצעת מחיר מותאמת.</p>
-    </section>
-    <section class="section">
-        <h2 class="section-title">לפני ואחרי</h2>
-        <p>גלריית לפני ואחרי הממחישה את השינוי העצום שהדמיות שלנו יכולות ליצור.</p>
-        <div class="gallery">
-            <div class="gallery-item">
-                <div class="before-after">
-                    <img src="cabinet_before.jpg" alt="לפני – מזנון">
-                    <img src="cabinet_after.jpg" alt="אחרי – מזנון"> 
-                </div>
-                <p>מזנון</p>
-            </div>
-            <div class="gallery-item">
-                <div class="before-after">
-                    <img src="avital.jpg" alt="לפני – חדר שינה">
-                    <img src="aftertal.jpg" alt="אחרי – חדר שינה">
-                </div>
-                <p>חדר שינה</p>
-            </div>
-            <div class="gallery-item">
-                <div class="before-after">
-                    <img src="chanel.jpg" alt="לפני – ספה">
-                    <img src="שאנל 3.jpg" alt="אחרי – ספה">
-                </div>
-                <p>ספה</p>
-            </div>
-<div class="gallery-item"">
-    <div class="before-after">
-        <img src="5.jpg" alt="לפני - חדר אוכל">
-        <img src="6 1.jpg" alt="אחרי - חדר אוכל">
+  <section class="section">
+    <h2 class="section-title">עלינו</h2>
+    <p>אנו ב‑<strong>HemoRoom</strong> מתמחים בהדמיות AI איכותיות לריהוט. התמונות הפשוטות של הרהיטים הופכות ליצירות אמנות מרהיבות שמציגות את הפריט בסביבתו העתידית בעיצוב מושלם.</p>
+  </section>
+  <section class="section">
+    <h2 class="section-title">שירותי הדמיה</h2>
+    <p>אין אצלנו חבילות קבועות – כל פרויקט מותאם בדיוק לצורכי הלקוח. כדי לקבל הצעת מחיר מותאמת עבור ההדמיות שלכם, שלחו לנו כמה תמונות תרצו שנדמה ומהו סגנון העיצוב המועדף עליכם, או פשוט ציינו שהכול פתוח לרעיונות.</p>
+  </section>
+  <section class="section">
+    <h2 class="section-title">לפני ואחרי</h2>
+    <p>דוגמאות לפני ואחרי שממחישות את השינוי העצום שהדמיות שלנו יכולות ליצור:</p>
+    <div class="gallery">
+      <div class="gallery-item" onclick="showLightbox('cabinet_before.jpg','cabinet_after.jpg','מזנון')">
+        <div class="before-after">
+          <img src="cabinet_before.jpg" alt="לפני – מזנון">
+          <img src="cabinet_after.jpg" alt="אחרי – מזנון">
         </div>
-<p>חדר אוכל</p>
-</div>
+        <p>מזנון</p>
+      </div>
+      <div class="gallery-item" onclick="showLightbox('bed_before.jpg','bed_after.png','חדר שינה')">
+        <div class="before-after">
+          <img src="bed_before.jpg" alt="לפני – חדר שינה">
+          <img src="bed_after.png" alt="אחרי – חדר שינה">
         </div>
-    </section>
-    <section class="section">
-        <h2 class="section-title">איך זה עובד?</h2>
-        <p>שלחו לנו את תמונות הרהיטים שלכם דרך Google Drive, WhatsApp או מייל. ציינו את מספר התמונות וסגנון העיצוב המועדף עליכם – או כתבו שאתם מעוניינים בעיצוב חופשי לחלוטין. אנו זמינים בכל שעה (24/7) ונחזור אליכם עם הדמיות מרהיבות ומוכנות לשימוש באתר, ברשתות ובקטלוגים.</p>
-    </section>
-    <section class="section contact">
-        <h2 class="section-title">צור קשר</h2>
-        <p>לפרטים והזמנות – אנחנו זמינים תמיד:</p>
-        <a href="https://wa.me/972543091711">הודעה ב‑WhatsApp</a>
-        <a href="mailto:info@hemoroom.com">שליחת מייל</a>
-    </section>
+        <p>חדר שינה</p>
+      </div>
+      <div class="gallery-item" onclick="showLightbox('closet_before.jpg','closet_after.png','ארון פתיחה')">
+        <div class="before-after">
+          <img src="closet_before.jpg" alt="לפני – ארון פתיחה">
+          <img src="closet_after.png" alt="אחרי – ארון פתיחה">
+        </div>
+        <p>ארון פתיחה</p>
+      </div>
+      <div class="gallery-item" onclick="showLightbox('sofa_before.jpg','sofa_after.jpg','ספה')">
+        <div class="before-after">
+          <img src="sofa_before.jpg" alt="לפני – ספה">
+          <img src="sofa_after.jpg" alt="אחרי – ספה">
+        </div>
+        <p>ספה</p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <h2 class="section-title">קטלוג לפני ואחרי נוסף</h2>
+    <p>עוד דוגמאות מרהיבות של פרויקטים שעברו מהפך:</p>
+    <div class="catalog">
+      <div class="catalog-item" onclick="showLightbox('table_before.jpg','table_after.jpg','שולחן X')">
+        <div class="before-after">
+          <img src="table_before.jpg" alt="לפני – שולחן X">
+          <img src="table_after.jpg" alt="אחרי – שולחן X">
+        </div>
+        <p>שולחן X</p>
+      </div>
+      <div class="catalog-item" onclick="showLightbox('beige_sofa_before.jpg','beige_sofa_after.jpg','ספה בהירה')">
+        <div class="before-after">
+          <img src="beige_sofa_before.jpg" alt="לפני – ספה בהירה">
+          <img src="beige_sofa_after.jpg" alt="אחרי – ספה בהירה">
+        </div>
+        <p>ספה בהירה</p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <h2 class="section-title">איך זה עובד?</h2>
+    <p>שלחו לנו את תמונות הרהיטים שלכם דרך Google Drive, WhatsApp או דוא"ל. ציינו את מספר התמונות וסגנון העיצוב המועדף עליכם – או כתבו שאתם מעוניינים בעיצוב חופשי לחלוטין. אנו זמינים בכל שעה (24/7) ונחזיר אליכם הדמיות מקצועיות ומוכנות לשימוש באתר, ברשתות ובקטלוגים.</p>
+  </section>
+  <section class="section contact">
+    <h2 class="section-title">צור קשר</h2>
+    <p>לפרטים והזמנות – אנחנו זמינים תמיד:</p>
+    <a href="https://wa.me/972543091711" target="_blank" rel="noopener">שליחת הודעה ב‑WhatsApp</a>
+    <a href="mailto:info@hemoroom.com">שליחת מייל</a>
+  </section>
 </div>
+<!-- Lightbox overlay -->
+<div id="lightbox-overlay" onclick="closeLightbox(event)">
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <div class="lightbox-title"></div>
+    <div class="lightbox-images">
+      <img class="lightbox-before" src="" alt="לפני">
+      <img class="lightbox-after" src="" alt="אחרי">
+    </div>
+    <button class="lightbox-close" onclick="closeLightbox()">סגור</button>
+  </div>
+</div>
+<script>
+function showLightbox(beforeSrc, afterSrc, title) {
+  var overlay = document.getElementById('lightbox-overlay');
+  overlay.style.display = 'flex';
+  overlay.querySelector('.lightbox-before').src = beforeSrc;
+  overlay.querySelector('.lightbox-after').src = afterSrc;
+  overlay.querySelector('.lightbox-title').textContent = title;
+}
+function closeLightbox(event) {
+  document.getElementById('lightbox-overlay').style.display = 'none';
+}
+</script>
 </body>
 </html>
