@@ -5,16 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HemoRoom – הדמיות לרהיטים</title>
 <style>
+/* Color variables for modern, colorful design */
+:root {
+  --primary-color: #0b1e34; /* dark navy header */
+  --secondary-color: #e4007c; /* vibrant pink accent */
+  --light-bg: #f9f9fb; /* light background */
+  --card-bg: #ffffff; /* card background */
+  --text-color: #333333; /* primary text color */
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f9f9fb;
-    color: #333;
+    background-color: var(--light-bg);
+    color: var(--text-color);
 }
 header {
-    background-color: #2c3e50;
+    background-color: var(--primary-color);
     color: #fff;
     padding: 40px 20px;
     text-align: center;
@@ -39,7 +47,7 @@ header p {
 .section-title {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: var(--primary-color);
     text-align: center;
 }
 .section p {
@@ -55,9 +63,10 @@ header p {
 .gallery-item {
     flex: 1 1 300px;
     max-width: 350px;
-    background-color: #fff;
+    background-color: var(--card-bg);
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--secondary-color);
     padding: 10px;
     text-align: center;
     cursor: pointer;
@@ -84,9 +93,10 @@ header p {
 }
 .catalog-item {
     flex: 0 0 320px;
-    background-color: #fff;
+    background-color: var(--card-bg);
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--secondary-color);
     padding: 10px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -107,7 +117,7 @@ header p {
     display: inline-block;
     margin: 10px 5px;
     padding: 12px 20px;
-    background-color: #27ae60;
+    background-color: var(--secondary-color);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -115,7 +125,7 @@ header p {
     transition: background-color 0.3s;
 }
 .contact a:hover {
-    background-color: #1e874c;
+    background-color: #c70067;
 }
 /* Lightbox overlay */
 #lightbox-overlay {
@@ -141,7 +151,7 @@ header p {
 .lightbox-title {
     font-size: 1.8em;
     margin-bottom: 10px;
-    color: #2c3e50;
+    color: var(--primary-color);
 }
 .lightbox-images {
     display: flex;
@@ -157,7 +167,7 @@ header p {
 }
 .lightbox-close {
     margin-top: 15px;
-    background-color: #e74c3c;
+    background-color: var(--secondary-color);
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -166,7 +176,7 @@ header p {
     cursor: pointer;
 }
 .lightbox-close:hover {
-    background-color: #c0392b;
+    background-color: #c70067;
 }
 </style>
 </head>
