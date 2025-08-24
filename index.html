@@ -4,36 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HemoRoom – הדמיות לרהיטים</title>
+<!-- Import modern Hebrew font -->
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Import modern sans-serif font for English/Latin elements -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 /* Color variables for modern, colorful design */
 :root {
-  --primary-color: #0b1e34; /* dark navy header */
-  --secondary-color: #e4007c; /* vibrant pink accent */
-  --light-bg: #f9f9fb; /* light background */
-  --card-bg: #ffffff; /* card background */
-  --text-color: #333333; /* primary text color */
+  /* Updated colour palette for a more modern, colourful look */
+  --primary-color: #2b2e4a;    /* deep indigo for headings */
+  --secondary-color: #e84545;  /* rich coral accent */
+  --tertiary-color: #903749;   /* plum tone for subtle accents */
+  --light-bg: #f7f9fc;        /* soft light background */
+  --alt-bg: #eef2f7;          /* alternate section background */
+  --card-bg: #ffffff;         /* card background */
+  --border-color: #dce3ed;    /* subtle border colour */
+  --text-color: #2e3156;      /* body text colour */
 }
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', 'Assistant', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: var(--light-bg);
+    /* Soft gradient background for a modern look */
+    background: linear-gradient(180deg, var(--light-bg) 0%, #eef2f8 100%);
     color: var(--text-color);
 }
 header {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 40px 20px;
+    /* Use a background image with dark overlay for a striking hero section */
+    background-image: linear-gradient(rgba(43, 46, 74, 0.8), rgba(43, 46, 74, 0.8)), url('table_after.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 120px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 header h1 {
     margin: 0;
-    font-size: 3em;
+    font-size: 3.2em;
 }
 header p {
     margin-top: 10px;
-    font-size: 1.2em;
+    font-size: 1.4em;
     opacity: 0.9;
 }
 .container {
@@ -42,13 +56,25 @@ header p {
     padding: 20px;
 }
 .section {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    padding: 40px 30px;
+    background-color: var(--light-bg);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+/* Alternate background colours for sections to create rhythm */
+.section:nth-of-type(even) {
+    background-color: var(--alt-bg);
 }
 .section-title {
-    font-size: 2em;
+    font-size: 2.2em;
     margin-bottom: 20px;
     color: var(--primary-color);
     text-align: center;
+    font-weight: 700;
+    border-bottom: 4px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 8px;
 }
 .section p {
     font-size: 1.1em;
@@ -66,14 +92,15 @@ header p {
     background-color: var(--card-bg);
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    border-left: 5px solid var(--secondary-color);
-    padding: 10px;
+    border-top: 5px solid var(--secondary-color);
+    border: 1px solid var(--border-color);
+    padding: 15px;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.25s;
 }
 .gallery-item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
 }
 .before-after {
     display: flex;
@@ -82,8 +109,8 @@ header p {
 .before-after img {
     width: 50%;
     height: auto;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 .catalog {
     display: flex;
@@ -96,36 +123,61 @@ header p {
     background-color: var(--card-bg);
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    border-left: 5px solid var(--secondary-color);
-    padding: 10px;
+    border-top: 5px solid var(--secondary-color);
+    border: 1px solid var(--border-color);
+    padding: 15px;
     margin-bottom: 20px;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.25s;
 }
 .catalog-item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
 }
 .catalog .before-after img {
     width: 50%;
     height: auto;
-    border-radius: 6px;
+    border-radius: 10px;
 }
 .contact {
     text-align: center;
 }
 .contact a {
     display: inline-block;
-    margin: 10px 5px;
-    padding: 12px 20px;
-    background-color: var(--secondary-color);
-    color: #fff;
+    margin: 10px 8px;
+    padding: 14px 28px;
+    background: var(--secondary-color);
+    color: #ffffff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 30px;
     font-size: 1.1em;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transition: transform 0.2s, background-color 0.3s;
 }
 .contact a:hover {
-    background-color: #c70067;
+    transform: translateY(-3px);
+    background-color: #b0031a;
+}
+
+/* Header CTA buttons */
+header .cta-buttons {
+    margin-top: 30px;
+}
+header .cta-buttons a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 14px 28px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+header .cta-buttons a:hover {
+    background-color: #e0215e;
+    transform: translateY(-3px);
 }
 /* Lightbox overlay */
 #lightbox-overlay {
@@ -184,6 +236,10 @@ header p {
 <header>
   <h1>HemoRoom</h1>
   <p>הדמיות AI לרהיטים – מוכנות לאתר, לקטלוג ולרשתות החברתיות</p>
+  <div class="cta-buttons">
+    <a href="#contact">קבלו הצעת מחיר</a>
+    <a href="https://wa.me/972543091711" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
 </header>
 <div class="container">
   <section class="section">
@@ -245,6 +301,38 @@ header p {
           <img src="beige_sofa_after.jpg" alt="אחרי – ספה בהירה">
         </div>
         <p>ספה בהירה</p>
+      </div>
+      <!-- Additional before/after projects -->
+      <div class="catalog-item" onclick="showLightbox('cross_table_before2.jpg','cross_table_after2.jpg','שולחן X נוסף')">
+        <div class="before-after">
+          <img src="cross_table_before2.jpg" alt="לפני – שולחן X נוסף">
+          <img src="cross_table_after2.jpg" alt="אחרי – שולחן X נוסף">
+        </div>
+        <p>שולחן X נוסף</p>
+      </div>
+      <div class="catalog-item" onclick="showLightbox('grey_sofa2_before.jpg','grey_sofa2_after.jpg','ספה אפורה')">
+        <div class="before-after">
+          <img src="grey_sofa2_before.jpg" alt="לפני – ספה אפורה">
+          <img src="grey_sofa2_after.jpg" alt="אחרי – ספה אפורה">
+        </div>
+        <p>ספה אפורה</p>
+      </div>
+
+      <!-- Newly added project: שולחן מודרני -->
+      <div class="catalog-item" onclick="showLightbox('table3_before.jpg','table3_after.jpg','שולחן מודרני')">
+        <div class="before-after">
+          <img src="table3_before.jpg" alt="לפני – שולחן מודרני">
+          <img src="table3_after.jpg" alt="אחרי – שולחן מודרני">
+        </div>
+        <p>שולחן מודרני</p>
+      </div>
+      <!-- Newly added project: ספה מודרנית -->
+      <div class="catalog-item" onclick="showLightbox('sofa3_before.jpg','sofa3_after.jpg','ספה מודרנית')">
+        <div class="before-after">
+          <img src="sofa3_before.jpg" alt="לפני – ספה מודרנית">
+          <img src="sofa3_after.jpg" alt="אחרי – ספה מודרנית">
+        </div>
+        <p>ספה מודרנית</p>
       </div>
     </div>
   </section>
